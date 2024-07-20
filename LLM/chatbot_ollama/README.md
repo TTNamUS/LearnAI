@@ -65,8 +65,8 @@ Run the following command inside the Docker container to download the `phi3` mod
     > ```
 
 
-[!NOTE]  
-To avoid downloading the model weights every time you run the container, follow these steps:
+> [!NOTE]  
+> To avoid downloading the model weights every time you run the container, follow these steps:
 
 4.  **Downloading the Weights**
     - **Create a Local Directory**: Create a local directory to store the model weights:
