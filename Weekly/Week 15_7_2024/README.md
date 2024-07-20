@@ -1,7 +1,11 @@
 
 -------------------------------------
 ## **Week 15/7/2024 - 21/7/2024**
-[<h6 style="text-align: right;"> click to back..</h6>](../README.md#my-learning)
+<h6><p align="right">
+    <a href="../README.md#my-learning">click to back..</a>
+</p></h6>
+
+[<h6 style="text-align: right;"> </h6>]()
 
 ### Table of Contents
 - [Recurrent Neural Networks (RNNs)](#-recurrent-neural-networks-rnns)
@@ -22,9 +26,9 @@ This week, I learn:
 > [Recurrent Neural Networks (RNNs), Clearly Explained!!! - StatQuest with Josh Starmer](https://www.youtube.com/watch?v=AsNTP8Kwu80)
 
 
-
-
-[<h6 style="text-align: right;"> go to top..</h6>](#week-1572024---2172024)
+<h6><p align="right">
+    <a href="#week-1572024---2172024">go to top..</a>
+</p></h6>
 
 ---
 ### >> Long Short-Term Memory (LSTM)
@@ -39,7 +43,9 @@ This week, I learn:
 
 
 
-[<h6 style="text-align: right;"> go to top..</h6>](#week-1572024---2172024)
+<h6><p align="right">
+    <a href="#week-1572024---2172024">go to top..</a>
+</p></h6>
 
 ---
 ### >> Web Scraping
@@ -58,9 +64,9 @@ This week, I learn:
 #### Method 5: How to Use LangChain for Web Scraping
 
 
-
-[<h6 style="text-align: right;"> go to top..</h6>](#week-1572024---2172024)
-
+<h6><p align="right">
+    <a href="#week-1572024---2172024">go to top..</a>
+</p></h6>
 ---
 
 ### >> Pre-training, Fine-tuning and LoRA/QLoRA
@@ -116,7 +122,9 @@ This week, I learn:
     - **Paged Optimizers**: Effectively manages memory spikes during the fine-tuning process.
 
 
-[<h6 style="text-align: right;"> go to top..</h6>](#week-1572024---2172024)
+<h6><p align="right">
+    <a href="#week-1572024---2172024">go to top..</a>
+</p></h6>
 
 ---
 ### Parameter Efficient Fine-Tuning (PEFT)
