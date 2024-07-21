@@ -110,6 +110,23 @@ To create a new Docker image with the downloaded weights, follow these steps:
     docker run -it --rm -p 11434:11434 ollama-phi3
     ```
 
+> [!NOTE]  
+> To display information about disk space used
+> ```
+> docker system df
+> ```
+> To delete all containers (including its volumes use)
+> ```bash
+> docker rm -vf $(docker ps -aq) 
+> ```
+> To delete volumne (if exists)
+> ```
+> docker volume prune -a
+>```
+> To delete all the images
+> ```
+> docker rmi -f $(docker images -aq)
+> ```
 
 
 ### Step 4: 
