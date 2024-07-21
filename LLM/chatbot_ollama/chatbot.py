@@ -17,7 +17,7 @@ st.title('Langchain Chatbot With Phi 3 Mini model')  # Set the title of the Stre
 input_text=st.text_input("Ask your question!")  # Create a text input field in the Streamlit app
 
 # Initialize the Ollama model
-llm=Ollama(model="llama2")
+llm=Ollama(model="phi3")
 
 # Create a chain that combines the prompt and the Ollama model
 chain=prompt|llm
