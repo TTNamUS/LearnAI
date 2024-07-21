@@ -1,7 +1,7 @@
-## Mini-Project: Build a Local Open-Source LLM Chatbot With RAG
+# **Mini-Project: Build a Local Open-Source LLM Chatbot With RAG**
 > Talking to PDF documents with Google’s Gemma-2b-it, LangChain, and Streamlit
 
-### Introduction
+## **Introduction**
 
 Large Language Models (LLMs) store a lot of knowledge. They have two main problems:
 - their knowledge stops at their last training
@@ -12,9 +12,9 @@ By using the RAG technique, we can give pre-trained LLMs access to very specific
 In this mini-project, we will implement `Google’s LLM Gemma` with additional `RAG` capabilities using the `Hugging Face` transformers library, `LangChain`, and the `Faiss` vector database.
 
 ---
-<h3><u><strong>How to use</strong></u></h3>
+<h3><strong>How to use</strong></h3>
 
-#### Step 1.
+### Step 1.
 Clone this repo:
 ```bash
 git clone https://github.com/leoneversberg/llm-chatbot-rag.git
@@ -24,19 +24,19 @@ and
 cd llm-chatbot-rag
 ```
 
-#### Step 2. 
+### Step 2. 
 Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Step 3.
+### Step 3.
 You need to create `.env` file containing the line
 ```
 ACCESS_TOKEN = <your hugging face token>
 ```
 
-#### Step 4.
+### Step 4.
 Run with
 ```python
 streamlit run src/app.py
@@ -46,11 +46,11 @@ streamlit run src/app.py
 
 
 ---
-### Methodology & Results
+## **Methodology & Results**
  
 ![Overview of the RAG pipeline implementation](https://pbs.twimg.com/media/GKBY6UpWsAAlr94?format=jpg&name=900x900)
 
-#### Retrieval-Augmented Generation (RAG)  
+### **Retrieval-Augmented Generation (RAG)** 
 The basic idea of RAG is:
 - Start with a knowledge base (e.g. Wikipedia documents) transformed into dense vector representations (embeddings) using encoder model.
 - Transform a user's question into an embedding vector using the same encoder model.
@@ -59,7 +59,7 @@ The basic idea of RAG is:
 
 
 
-#### Retriever Component: Encoder Model + Similarity Search
+### **Generator Component: LLM Model**
 The generator is an LLM that take text (a question) as input and produces new text as output. For this porject, I choose Google's recently released model [Gemma-2b-it](https://huggingface.co/google/gemma-2b-it).
 
 > [!NOTE]  
@@ -135,8 +135,7 @@ print(generate(question="How are you?", context=""))
 ```
 
 
-
-#### Retriever Component: Encoder Model + Similarity Search
+### **Retriever Component: Encoder Model + Similarity Search**
 The encoder model compresses text into a dense vector that encodes the information into a high-dimensional feature space.
 
 For this project, I choose the `all-MiniLM-L12-v2` encoder model, which is **only 120 MB** in size and **encodes text into a 384-dimensional vector**. 
@@ -164,7 +163,7 @@ print(len(embeddings))
 # >> 384
 ```
 
-#### Document Loader and Text Splitter
+### **Document Loader and Text Splitter**
 Now let’s build our knowledge base from multiple PDF documents.
 
 Since a single PDF file can have hundreds of pages, we need to break it down into smaller chunks that we can feed into a language model.
@@ -213,7 +212,7 @@ print(text_splitter.split_text(text))
 # >> ['Lorem ipsum dolor', 'ipsum dolor sit', 'dolor sit amet,', 'sit amet, consectetur', 'consectetur adipiscing', 'adipiscing elit.']
 ```
 
-#### Vector Database
+### **Vector Database**
 Next, we create our vector database to store the encoded chunks of text from our documents. There are many choices for databases. For this tutorial, I’m going to use `Faiss`.
 
 ```python
@@ -228,13 +227,13 @@ faiss_db = FAISS.from_documents(
 ```
 To compute the similarity between vectors, we can choose from different `DistanceStrategy` options. Common choices to compute similarity are `EUCLIDIAN_DISTANCE`, `COSINE`, and `DOT_PRODUCT`.
 
-#### User Interface with Streamlit
+### **User Interface with Streamlit**
 Streamlit can be used to quickly create a user interface for our chatbot.
 
 Go  to `src/app.py` for code.
 
 ---
-### Conclusion
+## **Conclusion**
 RAG is an exciting technique that gives LLMs access to external knowledge.
 
 One interesting use case is retrieving knowledge from PDF manuals, which can be hundreds of pages long.
@@ -243,14 +242,14 @@ Sometimes the LLM answers follow the given context very closely, and sometimes g
 
 It is easy to imagine a near future where our home appliances will be connected to LLMs with access to their own user manual. Then, we could simply ask them for help with our problems.
 
-### References
+## **References**
 [1] P. Lewis et al. (2021), [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401v4), arXiv:2005.11401
 
 [2] N. Muennighoff, N. Tazi, L. Magne, N. Reimers (2023), [MTEB: Massive Text Embedding Benchmark](https://arxiv.org/abs/2210.07316), arXiv:2210.07316
 
 [3] [How to Build a Local Open-Source LLM Chatbot With RAG - medium.com](https://towardsdatascience.com/how-to-build-a-local-open-source-llm-chatbot-with-rag-f01f73e2a131)
 
-### Programming Resources
+### **Programming Resources**
 - Full working code: https://github.com/leoneversberg/llm-chatbot-rag
 - Google’s Gemma model: https://huggingface.co/google/gemma-2b-it
 - LangChain documentation for retrieval: https://python.langchain.com/docs/modules/data_connection/
